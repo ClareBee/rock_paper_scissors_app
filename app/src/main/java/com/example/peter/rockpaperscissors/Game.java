@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class Game {
 
-//    private static Game INSTANCE = new Game();
+    private static Game INSTANCE = new Game();
 
     private String gameName;
     private ArrayList<Hand> hands;
@@ -77,12 +77,19 @@ public class Game {
         this.aiHand = getHandByIndex(generateRandom());
     }
 
+    public void setUserWins(Integer userWins) {
+        this.userWins = userWins;
+    }
+
+    public void setAiWins(Integer aiWins) {
+        this.aiWins = aiWins;
+    }
 
     // other behaviour
 
-//    public static Game getInstance() {
-//        return INSTANCE;
-//    }
+    public static Game getInstance() {
+        return INSTANCE;
+    }
 
     public void generateHands(){
         for (Hand hand : Hand.values()){
@@ -111,6 +118,9 @@ public class Game {
     }
 
     public String play(Hand userHand){
+        // ensure gameWon resets to false when a game is started in app
+        this.gameWon = false;
+
         // set hands
         setUserHand(userHand);
         setAiHand();

@@ -8,13 +8,17 @@ import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
+    private String resetScores;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        this.resetScores = "false";
 
         Intent resultActivityIntent = getIntent();
         Bundle extras = resultActivityIntent.getExtras();
+
 
         TextView userHand = (TextView) findViewById(R.id.user_hand);
         userHand.setText("You chose "+ extras.getString("userHandName") + ".");
@@ -34,6 +38,19 @@ public class ResultActivity extends AppCompatActivity {
 
     public void playAgainBtnOnClick(View button){
         Intent mainActivityIntent = new Intent(this, MainActivity.class);
+
+        mainActivityIntent.putExtra("resetScores", this.resetScores);
+
         startActivity(mainActivityIntent);
+    }
+
+    public void resetScoresBtnOnClick(View button){
+        this.resetScores = "true";
+
+        TextView user_score = (TextView) findViewById(R.id.user_score_text);
+        user_score.setText("0");
+
+        TextView ai_score = (TextView) findViewById(R.id.ai_score_text);
+        ai_score.setText("0");
     }
 }

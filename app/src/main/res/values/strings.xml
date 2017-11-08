@@ -13,4 +13,5 @@
     <string name="user">User:</string>
     <string name="robot">Robot:</string>
     <string name="game_rules">Game rules</string>
+    <string name="reset_scores">Reset Scores</string>
 </resources>

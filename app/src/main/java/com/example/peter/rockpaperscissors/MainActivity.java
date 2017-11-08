@@ -15,6 +15,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent mainActivityIntent = getIntent();
+        Bundle extras = mainActivityIntent.getExtras();
+
+        if (mainActivityIntent.hasExtra("resetScores")){
+            String resetScoresValue = extras.getString("resetScores");
+            if (resetScoresValue.equals("true")){
+                resetScores();
+            }
+        }
+
     }
 
     public void rockBtnOnClick(View button){
@@ -36,9 +47,7 @@ public class MainActivity extends AppCompatActivity {
         Intent resultActivityIntent = new Intent(this, ResultActivity.class);
 
         // get Game instance (singleton)
-        Game rpsGame = new Game();
-//        Game rpsGame = Game.getInstance();
-//        Log.d("Main Activity", "Got singleton instance");
+        Game rpsGame = Game.getInstance();
 
         String gameResult = rpsGame.play(userHand);
 
@@ -49,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
         resultActivityIntent.putExtra("aiScore", rpsGame.getAiWins().toString());
 
         startActivity(resultActivityIntent);
+    }
+
+    public void resetScores(){
+        // get Game instance (singleton)
+        Game rpsGame = Game.getInstance();
+
+        rpsGame.setUserWins(0);
+        rpsGame.setAiWins(0);
     }
 
 }
