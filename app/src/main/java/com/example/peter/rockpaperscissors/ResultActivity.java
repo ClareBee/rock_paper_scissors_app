@@ -1,6 +1,7 @@
 package com.example.peter.rockpaperscissors;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,9 @@ public class ResultActivity extends AppCompatActivity {
 
         TextView ai_score = (TextView) findViewById(R.id.ai_score_text);
         ai_score.setText(extras.getString("aiScore"));
+
+        // change text colour dependent on score
+        amendTextColours(extras, user_score, ai_score);
     }
 
     public void playAgainBtnOnClick(View button){
@@ -52,5 +56,21 @@ public class ResultActivity extends AppCompatActivity {
 
         TextView ai_score = (TextView) findViewById(R.id.ai_score_text);
         ai_score.setText("0");
+
+        user_score.setTextColor(Color.parseColor("#FF36474F"));
+        ai_score.setTextColor(Color.parseColor("#FF36474F"));
+    }
+
+    public void amendTextColours(Bundle extras, TextView user_score, TextView ai_score){
+        Integer userScoreInt = Integer.parseInt(extras.getString("userScore"));
+        Integer aiScoreInt = Integer.parseInt(extras.getString("aiScore"));
+
+        if (userScoreInt > aiScoreInt){
+            user_score.setTextColor(Color.parseColor("#00bc3e"));
+            ai_score.setTextColor(Color.parseColor("#bc0000"));
+        } else if (aiScoreInt > userScoreInt){
+            ai_score.setTextColor(Color.parseColor("#00bc3e"));
+            user_score.setTextColor(Color.parseColor("#bc0000"));
+        }
     }
 }
