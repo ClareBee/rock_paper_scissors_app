@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Rock Paper Scissors</string>
+    <string name="rules">The rules of the game are simple...\n\n\nYou select an option: Rock, Paper or Scissors, and the Computer will pick an option.\n\n- Rock beats Scissors\n- Paper beats Rock\n- Scissors beats Paper</string>
+    <string name="rock">Rock</string>
+    <string name="paper">Paper</string>
+    <string name="scissors">Scissors</string>
+    <string name="rock_image">Rock image</string>
+    <string name="paper_image">Paper image</string>
+    <string name="scissors_image">Scissors image</string>
 </resources>

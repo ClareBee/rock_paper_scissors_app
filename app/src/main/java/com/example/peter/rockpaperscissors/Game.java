@@ -90,12 +90,12 @@ public class Game {
     }
 
     public boolean checkWin(){
-        if (userHand.getBeats() == aiHand.getName()){
+        if (userHand.getBeats().equals(aiHand.getName())){
             this.gameWon = true;
             this.winnerName = "You";
             this.winningHand = userHand;
             this.userWins++;
-        } else if (aiHand.getBeats() == userHand.getName()) {
+        } else if (aiHand.getBeats().equals(userHand.getName())) {
             this.gameWon = true;
             this.winnerName = "The Robot";
             this.winningHand = aiHand;
