@@ -7,4 +7,7 @@
     <string name="rock_image">Rock image</string>
     <string name="paper_image">Paper image</string>
     <string name="scissors_image">Scissors image</string>
+    <string name="play_again">Play Again</string>
+    <string name="welcome">Welcome!</string>
+    <string name="play_game">Play Game</string>
 </resources>
