@@ -24,6 +24,12 @@ public class ResultActivity extends AppCompatActivity {
 
         TextView gameResult = (TextView) findViewById(R.id.game_output);
         gameResult.setText(extras.getString("gameResult"));
+
+        TextView user_score = (TextView) findViewById(R.id.user_score_text);
+        user_score.setText(extras.getString("userScore"));
+
+        TextView ai_score = (TextView) findViewById(R.id.ai_score_text);
+        ai_score.setText(extras.getString("aiScore"));
     }
 
     public void playAgainBtnOnClick(View button){

@@ -10,4 +10,7 @@
     <string name="play_again">Play Again</string>
     <string name="welcome">Welcome!</string>
     <string name="play_game">Play Game</string>
+    <string name="user">User:</string>
+    <string name="robot">Robot:</string>
+    <string name="game_rules">Game rules</string>
 </resources>

@@ -9,6 +9,8 @@ import java.util.Random;
 
 public class Game {
 
+//    private static Game INSTANCE = new Game();
+
     private String gameName;
     private ArrayList<Hand> hands;
     private Hand userHand;
@@ -77,6 +79,10 @@ public class Game {
 
 
     // other behaviour
+
+//    public static Game getInstance() {
+//        return INSTANCE;
+//    }
 
     public void generateHands(){
         for (Hand hand : Hand.values()){

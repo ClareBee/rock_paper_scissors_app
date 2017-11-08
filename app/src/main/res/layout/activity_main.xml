@@ -4,55 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.peter.rockpaperscissors.MainActivity">
+    tools:context="com.example.peter.rockpaperscissors.MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
-    <Button
-        android:id="@+id/rock_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="133dp"
+    <ImageButton
+        android:id="@+id/rock_image_button"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#00ffffff"
+        android:contentDescription="@string/rock_image"
         android:onClick="rockBtnOnClick"
-        android:text="@string/rock"
-        android:textColor="@android:color/holo_red_dark"
-        android:textStyle="bold"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/rock" />
 
-    <Button
-        android:id="@+id/paper_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="61dp"
-        android:onClick="paperBtnOnClick"
-        android:text="@string/paper"
-        android:textColor="@android:color/holo_red_dark"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rock_btn" />
-
-    <Button
-        android:id="@+id/scissors_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:id="@+id/paper_image_button"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="6dp"
-        android:onClick="scissorsBtnOnClick"
-        android:text="@string/scissors"
-        android:textColor="@android:color/holo_red_dark"
-        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#00ffffff"
+        android:contentDescription="@string/paper_image"
+        android:onClick="paperBtnOnClick"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toRightOf="@+id/rock_image_button"
+        app:layout_constraintRight_toLeftOf="@+id/scissors_image_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496"
+        app:srcCompat="@drawable/paper" />
+
+    <ImageButton
+        android:id="@+id/scissors_image_button"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#ffffff"
+        android:contentDescription="@string/scissors_image"
+        android:onClick="scissorsBtnOnClick"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paper_btn"
-        app:layout_constraintVertical_bias="0.315" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/scissors" />
 
 </android.support.constraint.ConstraintLayout>

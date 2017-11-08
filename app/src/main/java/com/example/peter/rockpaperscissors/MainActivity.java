@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     public void rockBtnOnClick(View button){
@@ -36,13 +35,18 @@ public class MainActivity extends AppCompatActivity {
     public void initializeIntent(){
         Intent resultActivityIntent = new Intent(this, ResultActivity.class);
 
+        // get Game instance (singleton)
         Game rpsGame = new Game();
+//        Game rpsGame = Game.getInstance();
+//        Log.d("Main Activity", "Got singleton instance");
 
         String gameResult = rpsGame.play(userHand);
 
         resultActivityIntent.putExtra("userHandName", this.userHand.getName());
         resultActivityIntent.putExtra("aiHandName", rpsGame.getAiHand().getName());
         resultActivityIntent.putExtra("gameResult", gameResult);
+        resultActivityIntent.putExtra("userScore", rpsGame.getUserWins().toString());
+        resultActivityIntent.putExtra("aiScore", rpsGame.getAiWins().toString());
 
         startActivity(resultActivityIntent);
     }
